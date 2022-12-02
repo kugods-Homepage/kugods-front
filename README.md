@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+## 브랜치 전략
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 기본
 
-## Available Scripts
+**Github Flow**
 
-In the project directory, you can run:
+- master : 라이브 서버에 제품으로 출시되는 브랜치.
+- develop : 다음 출시 버전을 대비하여 개발하는 브랜치.
+- feature : 추가 기능 개발 브랜치. develop 브랜치에 들어간다.
 
-### `npm start`
+## Github Flow 흐름
+1. 브랜치 생성
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. 개발 & 커밋 & 푸쉬
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. PR(Pull Request) 생성
 
-### `npm test`
+4. 리뷰 & 토의
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. 테스트
 
-### `npm run build`
+6. 최종 Merge
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 구조
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`feature/{구현기능}`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- main
+  - feature/기능1
+  - feature/기능2  
+    ...
 
-### `npm run eject`
+## 커밋 규칙
+## 커밋 메시지 Style Guide
+```
+format: [Jira-ticket] + Short (50 chars or less) summary of changes
+ex. [EPT-340] Change function name
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Additional explanation if necessary.
+(#issue or https://your-reference.com/link)
+```
+### ACTIVITY 목록
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- INT: only for initial commit
+- DOC: changes document or comment
+- FTR: add new feature
+- MOD: modify existing feature
+- FIX: fix an error or issue
+- RFC: refactor code
+- ADD: add new file or directory
+- RMV: remove existing file or directory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### DO
+- 다음과 같이 적어주세요
+    + `I added README` (:x:)
+    + `I add README` (:x:)
+    + `Added README` (:x:)
+    + `Adds README` (:x:)
+    + `Add README` (:white_check_mark:)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### DON'T
+- 요약은 전체 커밋 메시지의 제목이므로 문장의 끝에 마침표를 적지 말아주세요.
+    + `Add README.` (:x:)
+    + `Add README` (:white_check_mark:)
