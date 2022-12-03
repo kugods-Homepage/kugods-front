@@ -1,43 +1,47 @@
 import styled from '@emotion/styled';
 
-const OuterContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-`;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  width: 80%;
-  height: 60%;
+  width: 25rem;
+  height: 30rem;
 
   background-color: lightgray;
 `;
 
+const Logo = styled.div`
+  width: 100%;
+  height: 7rem;
+
+  text-align: center;
+`;
+
 const Title = styled.div`
-  height: 100px;
+  width: 100%;
+  height: 1rem;
+
+  text-align: center;
 `;
 
 const StyledForm = styled.form`
+  margin-top: 2.5rem;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  width: 80%;
+  width: 65%;
 
   height: auto;
 `;
 
 const StyledInput = styled.input`
   padding: 0 0.5rem;
+  width: 100%;
   height: 2rem;
-
   border-radius: 0.5rem;
 
   & + & {
@@ -48,24 +52,26 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   margin-top: 2.5rem;
 
+  width: 100%;
+  height: 2rem;
+
   border-radius: 0.5rem;
 
-  height: 2rem;
+  background-color: white;
 `;
 
-const SignInPage = () => {
+const SignIn = () => {
   return (
-    <OuterContainer>
-      <Container>
-        <Title>KUGODS</Title>
-        <StyledForm>
-          <StyledInput placeholder="ID" />
-          <StyledInput placeholder="password" />
-          <StyledButton type="submit">로그인</StyledButton>
-        </StyledForm>
-      </Container>
-    </OuterContainer>
+    <Container>
+      <Logo>Logo Position</Logo>
+      <Title>KUGODS</Title>
+      <StyledForm>
+        <StyledInput type="tsxt" placeholder="로그인" />
+        <StyledInput type="password" placeholder="비밀번호" />
+        <StyledButton type="submit">로그인</StyledButton>
+      </StyledForm>
+    </Container>
   );
 };
 
-export default SignInPage;
+export default SignIn;
