@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { StyledInput } from '../auth/StyledInput';
+import { StyledButton } from '../auth/StyledButton';
+import { StyledForm } from '../auth/StyledForm';
 
 const Container = styled.div`
   display: flex;
@@ -26,13 +28,8 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const StyledForm = styled.form`
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const Form = styled(StyledForm)`
   width: 65%;
-  height: auto;
 `;
 
 const Input = styled(StyledInput)`
@@ -41,12 +38,8 @@ const Input = styled(StyledInput)`
   }
 `;
 
-const StyledButton = styled.button`
-  margin-top: 2.5rem;
+const Button = styled(StyledButton)`
   width: 100%;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: white;
 `;
 
 const SignIn = () => {
@@ -54,11 +47,11 @@ const SignIn = () => {
     <Container>
       <Logo>Logo Position</Logo>
       <Title>KUGODS</Title>
-      <StyledForm>
+      <Form>
         <Input type="text" placeholder="로그인" />
         <Input type="password" placeholder="비밀번호" />
-        <StyledButton type="submit">로그인</StyledButton>
-      </StyledForm>
+        <Button type="submit">로그인</Button>
+      </Form>
     </Container>
   );
 };
