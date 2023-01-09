@@ -1,70 +1,71 @@
 import styled from '@emotion/styled';
-import { StyledInput } from '../auth/StyledInput';
-import { StyledButton } from '../auth/StyledButton';
-import { StyledForm } from '../auth/StyledForm';
+import Logo from '../Common/Logo';
+import StyledInput from '../Common/StyledInput';
+import StyledButton from '../Common/StyledButton';
+import StyledForm from '../Common/StyledForm';
+import { colors } from '../../styles/theme';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 50rem;
-  height: 30rem;
-
-  background-color: lightgray;
+  width: 128rem;
+  height: 77rem;
+  border-radius: 38.5rem;
+  box-shadow: 0 0.7rem 4.6rem 1.7rem rgba(0, 0, 0, 0.1);
+  background-color: ${colors.white};
 `;
 
-const Logo = styled.div`
-  width: 100%;
-  height: 7rem;
-
-  text-align: center;
-`;
-
-const Title = styled.div`
-  width: 100%;
-  height: 1rem;
-
-  text-align: center;
-`;
-
-const Form = styled(StyledForm)`
-  width: 80%;
+const LogoPosition = styled.div`
+  margin: 10rem 0 8rem 0;
+  width: 20rem;
+  height: 10rem;
 `;
 
 const InputContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-  grid-gap: 1rem;
-`;
+  grid-row-gap: 10px;
+  grid-column-gap: 50px;
 
-const Input = styled(StyledInput)``;
+  .password {
+    position: relative;
 
-const Button = styled(StyledButton)`
-  width: 50%;
+    .info {
+      position: absolute;
+      top: -40px;
+      margin-left: 20px;
+      font-size: 2rem;
+      color: ${colors.google_blue};
+    }
+  }
 `;
 
 const SignUp = () => {
   return (
     <Container>
-      <Logo>Logo Position</Logo>
-      <Title>KUGODS</Title>
-      <Form>
+      <LogoPosition>
+        <Logo width={20} height={10} />
+      </LogoPosition>
+      <StyledForm>
         <InputContainer>
-          <Input type="text" placeholder="아이디" />
+          <StyledInput width={44} height={5} type="text" placeholder="E-mail" />
           <div className="_blank" />
-          <Input type="password" placeholder="비밀번호" />
-          <Input type="text" placeholder="이름" />
-          <Input type="password" placeholder="비밀번호 확인" />
-          <Input type="text" placeholder="학번" />
-          <Input type="text" placeholder="학과" />
-          <Input type="text" placeholder="승인코드" />
+          <div className="password">
+            <label className="info">A password should be alphanumeric.</label>
+            <StyledInput width={44} height={5} type="password" placeholder="Password" />
+          </div>
+          <StyledInput width={44} height={5} type="password" placeholder="Password (again)" />
+          <StyledInput width={44} height={5} type="text" placeholder="Name" />
+          <StyledInput width={44} height={5} type="text" placeholder="Major" />
+          <StyledInput width={44} height={5} type="text" placeholder="Student ID Number" />
+          <StyledInput width={44} height={5} type="text" placeholder="Code" />
         </InputContainer>
-        <Button type="submit">회원가입</Button>
-      </Form>
+        <StyledButton type="submit" text="Sign Up" mt={100} />
+      </StyledForm>
     </Container>
   );
 };
