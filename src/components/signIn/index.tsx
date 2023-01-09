@@ -1,57 +1,90 @@
 import styled from '@emotion/styled';
-import { StyledInput } from '../auth/StyledInput';
-import { StyledButton } from '../auth/StyledButton';
-import { StyledForm } from '../auth/StyledForm';
+import StyledButton from '../Common/StyledButton';
+import StyledInput from '../Common/StyledInput';
+import StyledForm from '../Common/StyledForm';
+import { colors } from '../../styles/theme';
+import Logo from '../Common/Logo';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 25rem;
-  height: 30rem;
+  width: 62rem;
+  height: 77rem;
 
-  background-color: lightgray;
+  border-radius: 10rem;
+
+  box-shadow: 0 0.7rem 4.6rem 1.7rem #0000001a;
+
+  background-color: #ffffff;
 `;
 
-const Logo = styled.div`
+const LogoPosition = styled.div`
+  margin: 13rem auto 8rem auto;
+`;
+
+const Info = styled.div`
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 7rem;
-
-  text-align: center;
+  font-size: 1.6rem;
+  color: ${colors.google_blue};
 `;
 
-const Title = styled.div`
-  width: 100%;
-  height: 1rem;
+const Remember = styled.div`
+  display: flex;
+  margin-left: 10px;
 
-  text-align: center;
-`;
+  span {
+    margin-left: 10px;
+  }
 
-const Form = styled(StyledForm)`
-  width: 65%;
-`;
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
 
-const Input = styled(StyledInput)`
-  & + & {
-    margin-top: 1rem;
+    width: 2rem;
+    height: 2rem;
+
+    border: 1px solid ${colors.google_blue};
+    border-radius: 0.6rem;
+  }
+
+  input[type='checkbox']:checked {
+    background-color: ${colors.google_blue};
   }
 `;
 
-const Button = styled(StyledButton)`
-  width: 100%;
+const Forgot = styled.div`
+  margin-right: 5px;
+
+  span {
+    font-weight: bold;
+  }
 `;
 
 const SignIn = () => {
   return (
     <Container>
-      <Logo>Logo Position</Logo>
-      <Title>KUGODS</Title>
-      <Form>
-        <Input type="text" placeholder="로그인" />
-        <Input type="password" placeholder="비밀번호" />
-        <Button type="submit">로그인</Button>
-      </Form>
+      <LogoPosition>
+        <Logo width={20} height={10} />
+      </LogoPosition>
+      <StyledForm>
+        <StyledInput width={40} height={5} label="E-mail" type="text" />
+        <StyledInput width={40} height={5} label="Password" type="password" />
+        <Info>
+          <Remember>
+            <input type="checkbox" />
+            <span>Remember me</span>
+          </Remember>
+          <Forgot>
+            <span>Forgot password?</span>
+          </Forgot>
+        </Info>
+        <StyledButton type="submit" text="Login" />
+      </StyledForm>
     </Container>
   );
 };
