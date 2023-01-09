@@ -73,7 +73,7 @@ const SignIn = () => {
       </LogoPosition>
       <StyledForm>
         <StyledInput width={40} height={5} label="E-mail" type="text" />
-        <StyledInput width={40} height={5} label="Password" type="password" />
+        <StyledInput width={40} height={5} mt={25} label="Password" type="password" />
         <Info>
           <Remember>
             <input type="checkbox" />
