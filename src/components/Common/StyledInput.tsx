@@ -1,13 +1,19 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 import { colors } from '../../styles/theme';
 
-const Container = styled.div<{ width: number; height: number; mt?: number }>`
+const Container = styled.div<{ width: number; height: number; mt?: number; fs?: number }>`
   width: ${({ width }) => width + 'rem'};
   height: ${({ height }) => height + 'rem'};
 
   position: relative;
 
   margin-top: ${({ mt }) => (mt ? mt + 'px' : '0')};
+  ${({ fs }) =>
+    fs &&
+    css`
+      font-size: ${fs + 'rem'};
+    `}
 `;
 
 const Label = styled.label`

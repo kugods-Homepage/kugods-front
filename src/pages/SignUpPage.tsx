@@ -3,16 +3,8 @@ import Logo from '../components/Common/Logo';
 import StyledButton from '../components/Common/StyledButton';
 import StyledForm from '../components/Common/StyledForm';
 import StyledInput from '../components/Common/StyledInput';
+import { Rectangle } from '../components/Shape';
 import { colors } from '../styles/theme';
-
-const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-`;
 
 const Container = styled.div`
   display: flex;
@@ -55,7 +47,7 @@ const InputContainer = styled.div`
 
 const SignUpPage = () => {
   return (
-    <Box>
+    <Rectangle isTop>
       <Container>
         <LogoPosition>
           <Logo width={20} height={10} />
@@ -77,7 +69,7 @@ const SignUpPage = () => {
           <StyledButton type="submit" text="Sign Up" mt={100} />
         </StyledForm>
       </Container>
-    </Box>
+    </Rectangle>
   );
 };
 

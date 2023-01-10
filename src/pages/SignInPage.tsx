@@ -3,16 +3,8 @@ import Logo from '../components/Common/Logo';
 import StyledButton from '../components/Common/StyledButton';
 import StyledForm from '../components/Common/StyledForm';
 import StyledInput from '../components/Common/StyledInput';
+import { Rectangle } from '../components/Shape';
 import { colors } from '../styles/theme';
-
-const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-`;
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +18,7 @@ const Container = styled.div`
 
   box-shadow: 0 0.7rem 4.6rem 1.7rem #0000001a;
 
-  background-color: #ffffff;
+  background-color: ${colors.white};
 `;
 
 const LogoPosition = styled.div`
@@ -76,7 +68,7 @@ const Forgot = styled.div`
 
 const SignInPage = () => {
   return (
-    <Box>
+    <Rectangle isTop>
       <Container>
         <LogoPosition>
           <Logo width={20} height={10} />
@@ -96,7 +88,7 @@ const SignInPage = () => {
           <StyledButton type="submit" text="Login" />
         </StyledForm>
       </Container>
-    </Box>
+    </Rectangle>
   );
 };
 
