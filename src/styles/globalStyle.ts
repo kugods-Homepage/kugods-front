@@ -72,7 +72,7 @@ export const globalStyle = css`
 
   button {
     border: none;
-    cursor: pointer;
+    background: none;
   }
 
   input {
